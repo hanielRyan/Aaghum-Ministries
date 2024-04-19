@@ -9,7 +9,7 @@ export default function Contact(){
     const {register,handleSubmit,formState:{errors}} = useForm();
     const onSubmit = async(data:any)=>{
     try{
-    await axios.post("http://localhost:5000",{data});
+    await axios.post("https://aaghum-backend.onrender.com",{data});
     setOpen(true);
     }catch(err){
            console.log(err);
