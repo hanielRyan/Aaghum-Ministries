@@ -6,10 +6,12 @@ import { motion } from "framer-motion";
 import {useForm} from "react-hook-form";
 export default function Contact(){
     const [open,setOpen]=useState(false);
-    const {register,handleSubmit,formState:{errors}} = useForm();
+    const {register,handleSubmit,formState:{errors},reset} = useForm();
     const onSubmit = async(data:any)=>{
     try{
-    await axios.post("https://aaghum-backend.onrender.com",{data});
+     await axios.post("https://aaghum-backend.onrender.com",{data});
+    console.log(data);
+    reset();
     setOpen(true);
     }catch(err){
            console.log(err);
@@ -31,22 +33,26 @@ export default function Contact(){
 <motion.form initial={{opacity:0, x:-80}} whileInView={{opacity:1,x:0}} viewport={{once:false}} transition={{ duration:1,delay:0.5}} onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-2 w-[22rem]  sm:w-[28rem] gap-4"> 
 <div >
     <TextField variant="outlined" error={errors?.lastName ? true : false} color={`${errors?.firstName ? "error" : "primary"}`} placeholder="first name" {...register("firstName",{
-        required:true
+        required:true,
+        pattern: /^[A-Za-z]+$/
     })}/>
 
 {errors?.firstName?.type === "required" && <p className="text-red-500">First name is required</p>}
+{errors?.firstName?.type === "pattern" && <p className="text-red-500">number is not allowed</p>}
 </div>
 <div>
     <TextField variant="outlined" error={errors?.lastName ? true : false} placeholder="last name" {...register("lastName",{
-        required:true
+        required:true,
+        pattern: /^[A-Za-z]+$/
     })}/>
 
 {errors?.lastName?.type === "required" && <p className="text-red-500">Last name is required</p>}
+{errors?.lastName?.type === "pattern" && <p className="text-red-500">number is not allowed</p>}
 </div>
 <div className="col-span-2 grid">
     <TextField className="col-span-2" error={errors?.lastName ? true : false} variant="outlined" color={`${errors?.email ? "error" : "primary"}`} placeholder="email" {...register("email",{
         required:true,
-        pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        pattern: /^([^\s@]+)@gmail\.com$/
     })}/>
 
 {errors?.email?.type === "required" && <p className="text-red-500">email is required</p>}

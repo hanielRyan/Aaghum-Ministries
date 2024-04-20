@@ -7,7 +7,7 @@ export default function NavBar(){
         <>
 <nav className="p-3 flex justify-between px-6  bg-white/30 backdrop-blur-md fixed top-0 right-0 left-0 z-20">
 <div className="flex jutify-center items-center gap-2">
-<Avatar src="/icon.jpg" className="h-[4rem] w-[4rem]"/>
+<Avatar src="/icon.jpeg" className="h-[4rem] w-[4rem]"/>
 <Typography variant="h6" className="hidden sm:block">Aaghum Ministries</Typography>
 </div> 
 <MuiDrawer/>

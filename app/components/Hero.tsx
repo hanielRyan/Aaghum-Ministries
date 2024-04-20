@@ -34,7 +34,7 @@ x:0,
 </MotionDiv>
     </section>
     <MotionDiv variants={imgFadeVariant} initial="hidden" whileInView="show" transition={{duration:1}} viewport={{once:false}} className="grid place-items-center">
-<Avatar src="/icon.jpg" className="h-[22rem] w-[22rem] shadow-md"/>
+<Avatar src="/icon.jpeg" className="h-[22rem] w-[22rem] shadow-md"/>
     </MotionDiv>
 </div>
     )
