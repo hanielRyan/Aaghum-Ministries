@@ -15,7 +15,7 @@ const bigVariation={
     return(
         <div id="videos">
             <MotionDiv variants={bigVariation} initial="hidden" whileInView="show" viewport={{once:false}} transition={{duration:1,type:"linear",ease:"easeIn"}}>
-            <Typography variant="h3" id="videos" className="text-center"> <Link href="https://www.youtube.com/@Aaghum" className="text-black underline">Like</Link> My Latest Songs</Typography>
+            <Typography variant="h3" id="videos" className="text-center"> <Link href="https://www.youtube.com/@Aaghum" className="text-black underline" target="_blank">Like</Link> My Latest Songs</Typography>
             </MotionDiv>
             <MotionDiv variants={bigVariation} initial="hidden" whileInView="show" viewport={{once:false}} transition={{duration:1,delay:0.5}} className="h-[90rem] lg:h-[25rem] grid lg:grid-cols-3  p-4 sm:p-20 gap-4 ">
 <div className="h-[100%] w-[100%]"> 
