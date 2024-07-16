@@ -13,7 +13,7 @@ export default function Contact(){
     const onSubmit=async(data:any)=>{
         setDisabled(true);
         try{
-            await axios.post("http://localhost:5000/",{data});
+            await axios.post("https://aaghum-backend.vercel.app/",{data});
             setOpen(true);
             setDisabled(false)
         }catch(err){
