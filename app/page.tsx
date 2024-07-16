@@ -11,7 +11,7 @@ export default function Home(){
 <Hero/>
 <About/>
 <Video/>
-<Contact/>
+<Contact/> 
 <Footer/>
     </div>
   )

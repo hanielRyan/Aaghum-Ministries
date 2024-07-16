@@ -22,13 +22,13 @@ export default function Hamburger(){
     </Toolbar>
     <Divider/>
 {
-    navItems.map(item  => <><Link href={`#${item}`} key={item}>
+    navItems.map(item  => <div  key={item}><Link href={`#${item}`} >
      <ListItemButton onClick={()=>setOpen(false)} className="h-20">
         <ListItemText primary={item} className="text-center"/>
      </ListItemButton>
      </Link>
      <Divider/>
-     </>
+     </div>
     )
 }
 

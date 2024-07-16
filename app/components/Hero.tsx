@@ -1,7 +1,7 @@
 import { Typography,Button } from "@mui/material";
 import { Dancing_Script } from "next/font/google";
 import Image from "next/image";
-import { MotionDiv } from "./MotionDiv";
+import  MotionDiv  from "./MotionDiv";
 import Link from "next/link";
 const dancingScript = Dancing_Script({subsets:["latin"]});
 export default function Hero(){

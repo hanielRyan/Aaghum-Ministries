@@ -1,6 +1,6 @@
 import { AppBar,Avatar, Typography } from "@mui/material";
 import Link from "next/link";
-import { MotionDiv } from "./MotionDiv";
+import  MotionDiv  from "./MotionDiv";
 import Hamburger from "./Hamburger";
 export default function Nav(){
 

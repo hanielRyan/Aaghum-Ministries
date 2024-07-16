@@ -4,10 +4,10 @@ import { Alert, Button, TextField,Snackbar } from "@mui/material";
 import { Dancing_Script } from "next/font/google";
 const dancingScript = Dancing_Script({subsets:["latin"]});
 import { useState } from "react";
-import { MotionDiv } from "./MotionDiv";
+import  MotionDiv  from "./MotionDiv";
 import axios from "axios";
 export default function Contact(){
-    const {register,handleSubmit,formState:{errors}} = useForm();
+    const {register,handleSubmit,formState:{errors},reset} = useForm();
     const [open,setOpen]=useState(false);
     const [disabled,setDisabled]=useState(false);
     const onSubmit=async(data:any)=>{
@@ -20,7 +20,7 @@ export default function Contact(){
            console.log(err);
            setDisabled(false)
         }
-
+reset();
     }
     return(
         <div className="grid place-items-center mt-[100px] min-h-[80vh]" id="contact">
@@ -30,15 +30,25 @@ export default function Contact(){
         <form className="grid grid-cols-2 gap-5 px-5" onSubmit={handleSubmit(onSubmit)}>
             <MotionDiv  initial={{y:10,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.1}} className="grid gap-2">
             <TextField variant="outlined" label="first name" error={errors?.firstName?.type ? true : false} {...register("firstName",{
-                required:true
-            })}/>
+                required:true,
+                pattern: {
+                    value: /^[A-Za-z]+$/,
+                    message: "First name should only contain letters"
+                  }
+            })} />
                         {errors?.firstName?.type === "required" && <Alert severity="error">first name is required.</Alert>}
+                        {errors?.firstName?.type === "pattern" && <Alert severity="error">numbers are not allowed.</Alert>}
                         </MotionDiv>
                         <MotionDiv  initial={{y:10,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.2}} className="grid gap-2">
             <TextField  error={errors?.lastName?.type ? true : false} variant="outlined" label="last name" {...register("lastName",{
-                required:true
+                required:true,
+                pattern: {
+                    value: /^[A-Za-z]+$/,
+                    message: "First name should only contain letters"
+                  }
             })}/>
                         {errors?.lastName?.type === "required" && <Alert severity="error">last name is required.</Alert>}
+                        {errors?.lastName?.type === "pattern" && <Alert severity="error">numbers are not allowed.</Alert>}
                         </MotionDiv>
                         <MotionDiv  initial={{y:10,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.3}} className="grid col-span-2 gap-2">
             <TextField   error={errors?.email?.type ? true : false} variant="outlined" label="email"  {...register("email",{

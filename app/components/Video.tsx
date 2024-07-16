@@ -3,7 +3,7 @@ import {Swiper,SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { MotionDiv } from "./MotionDiv";
+import  MotionDiv  from "./MotionDiv";
 import { Dancing_Script } from "next/font/google";
 const dancingScript = Dancing_Script({subsets:["latin"]});
 import Link from "next/link";
