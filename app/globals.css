@@ -6,6 +6,44 @@ html{
     scroll-behavior: smooth;
 }
 
-*{
+.containerz{
+    clip-path: polygon(24% 0, 100% 0, 100% 50%, 100% 100%, 24% 83%);
+    position:relative
+}
+
+.Swiper .swiper-button-next{
+background-color:black;
+color:white;
+font-weight: 700;
+padding:40px;
+text-align:center;
+border-radius:100%;
+transform:translateX(-40px);
+transition:0.3s all;
+}
+.Swiper .swiper-button-next:hover{
+color:#FF2E2E;
+}
+.Swiper .swiper-button-prev{
+background-color:black;
+color:white;
+font-weight: 700;
+padding:40px;
+text-align:center;
+border-radius:100%;
+transform:translateX(40px);
+transition:0.3s all;
+}
+.Swiper .swiper-button-prev:hover{
+color:#FF2E2E;
+}
+
+html{
     overflow-x:hidden;
+}
+
+@media screen and (max-width:1024px){
+  .containerz{
+    clip-path:none;
+  }
 }

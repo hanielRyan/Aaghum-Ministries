@@ -1,41 +1,36 @@
-import { Avatar, Typography } from "@mui/material";
+import { Typography,Button } from "@mui/material";
+import { Dancing_Script } from "next/font/google";
+import Image from "next/image";
 import { MotionDiv } from "./MotionDiv";
+import Link from "next/link";
+const dancingScript = Dancing_Script({subsets:["latin"]});
 export default function Hero(){
-    const fadeVariant = {
-        hidden:{
-            opacity:0,
-            x:-80
-        },
-        show:{
-opacity:1,
-x:0,
-        }
-    }
-    const imgFadeVariant = {
-        hidden:{
-            opacity:0,
-            x:80
-        },
-        show:{
-opacity:1,
-x:0,
-        }
-    }
     return(
-<div className="grid bmd:grid-cols-2 place-items-center mt-32 h-screen  md:h-[85vh]" id="home">
-    <section className="flex flex-col gap-10 items-start pl-10 justify-center">
-        <MotionDiv variants={fadeVariant} initial="hidden" whileInView="show" viewport={{once:false}} transition={{duration:1}}>
-<Typography className="text-4xl">Aaghum Ministries</Typography>
-</MotionDiv>
-<MotionDiv variants={fadeVariant} initial="hidden" whileInView="show" viewport={{once:false}} transition={{delay:0.5,duration:1}}>
-<Typography variant="h6">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iure asperiores, non magnam quam blanditiis quaerat praesentium sit deleniti consequuntur, velit repellat recusandae ea harum animi nobis quas vero id!
-</Typography>
-</MotionDiv>
-    </section>
-    <MotionDiv variants={imgFadeVariant} initial="hidden" whileInView="show" transition={{duration:1}} viewport={{once:false}} className="grid place-items-center">
-<Avatar src="/icon.jpeg" className="h-[22rem] w-[22rem] shadow-md"/>
+        <div className="mt-[110px] mx-[30px] min-h-[80vh] max-w-[95vw] lg:max-w-fit   grid gap-20 lg:gap-0 lg:grid-cols-2 place-items-center" id="home">
+            <section className="grid gap-10">
+                <MotionDiv initial={{x:-10,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.2}}>
+    <h1 className={`text-4xl sm:text-6xl font-bold ${dancingScript.className}`}>
+        
+        <span className="font-[1000] text-cyan-600">  Aaghum </span>    Ministries
+    </h1>
     </MotionDiv>
-</div>
+    <MotionDiv initial={{x:-10,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.3}}>
+    <Typography  className="">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iure asperiores, non magnam quam blanditiis quaerat praesentium sit deleniti consequuntur, velit repellat recusandae ea harum animi nobis quas vero id!
+    </Typography>
+    </MotionDiv>
+    <MotionDiv initial={{x:-10,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.4}} className="grid place-items-center">
+        <Link href="https://www.youtube.com/@Aaghum" target="_blank">
+        <Button variant="contained" className="py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-[3rem]">visit my channel</Button>
+        </Link>
+
+    </MotionDiv>
+    </section>
+    <MotionDiv initial={{x:20,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.5}} className="px-3 justify-self-center lg:justify-self-end">
+        <div className="containerz  lg:h-[600px] lg:w-[500px] h-[350px] w-[350px] bg-blue-500 relative rounded-full lg:rounded-2xl overflow-hidden grid place-items-center" > 
+<Image src="/ephin.jpeg" alt="" className="h-full w-full absolute object-left  " fill/>
+        </div>
+    </MotionDiv>
+        </div>
     )
 }

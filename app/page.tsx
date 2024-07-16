@@ -1,19 +1,18 @@
-"use client";
-import NavBar from "./components/NavBar";
+import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Videos from "./components/Videos";
+import Video from "./components/Video";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 export default function Home(){
   return(
     <div>
-      <NavBar/>
-      <Hero/>
-      <About/>
-      <Videos/>
-      <Contact/>
-      <Footer/>
+<Nav/>
+<Hero/>
+<About/>
+<Video/>
+<Contact/>
+<Footer/>
     </div>
   )
 }

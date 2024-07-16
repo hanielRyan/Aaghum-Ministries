@@ -1,12 +1,9 @@
-"use client";
-import { Typography } from "@mui/material";
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import Link from "next/link";
+import { Dancing_Script } from "next/font/google";
+const dancingScript = Dancing_Script({subsets:["latin"]});
 export default function Footer(){
     return(
-        <footer className="bg-black h-24 flex justify-around items-center ">
-           <Typography className="text-white" variant="h6" >youtube channel :<Link href="https://www.youtube.com/@Aaghum" target="_blank"> <YouTubeIcon className="text-red-500 text-[40px] hover:cursor-pointer"/></Link></Typography>
-
-        </footer>
+        <div className="bg-black text-white h-[80px] grid place-items-center mt-[100px] ">
+<p className={`${dancingScript.className}`}> may the lord guide you and bless you as you walk in his ways. </p>
+        </div>
     )
 }
