@@ -1,7 +1,8 @@
-import { AppBar,Avatar, Typography } from "@mui/material";
+import { AppBar, Typography } from "@mui/material";
 import Link from "next/link";
 import  MotionDiv  from "./MotionDiv";
 import Hamburger from "./Hamburger";
+import Image from "next/image";
 export default function Nav(){
 
 const navItems = ["home","about","videos","contact"];
@@ -10,7 +11,7 @@ const navItems = ["home","about","videos","contact"];
         <AppBar className="bg-black text-white h-[100px] grid grid-cols-2 justify-center items-center  px-10" position="fixed">
             <MotionDiv initial={{x:-10,opacity:0}} animate={{x:0,opacity:1}} transition={{ease:"linear"}}>
             <section className="flex gap-5 items-center">
-<Avatar src="/icon.jpeg" alt="" className="h-[60px] w-[60px] hidden sm:block"/>
+<Image src="/ephin.jpg" alt="picture of Ephin" quality={100} height={60} width={60} className="rounded-full hidden sm:block h-[60px] w-[60px]"/>
 <Typography variant="h6">Aaghum Ministries</Typography>
             </section>
             </MotionDiv>
