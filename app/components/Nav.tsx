@@ -8,10 +8,10 @@ export default function Nav(){
 const navItems = ["home","about","videos","contact"];
 
     return(
-        <AppBar className="bg-black text-white h-[100px] grid grid-cols-2 justify-center items-center  px-10" position="fixed">
+        <AppBar className=" h-[100px] grid grid-cols-2 justify-center items-center  px-10" position="fixed" sx={{backgroundColor:"black",color:"white"}}>
             <MotionDiv initial={{x:-10,opacity:0}} animate={{x:0,opacity:1}} transition={{ease:"linear"}}>
             <section className="flex gap-5 items-center">
-<Image src="/ephin.jpg" alt="picture of Ephin" quality={100} height={60} width={60} className="rounded-full hidden sm:block h-[60px] w-[60px]"/>
+<Image src="/ephin.jpg" objectFit={"cover"} alt="picture of Ephin" quality={100} height={60} width={60} className="rounded-full hidden sm:block h-[60px] w-[60px]"/>
 <Typography variant="h6">Aaghum Ministries</Typography>
             </section>
             </MotionDiv>

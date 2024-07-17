@@ -21,14 +21,14 @@ export default function Hero(){
     </MotionDiv>
     <MotionDiv initial={{x:-10,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.4}} className="grid place-items-center">
         <Link href="https://www.youtube.com/@Aaghum" target="_blank">
-        <Button variant="contained" className="py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-[3rem]">visit my channel</Button>
+        <Button variant="contained" className="py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-[3rem]" name="visit my channel">visit my channel</Button>
         </Link>
 
     </MotionDiv>
     </section>
     <MotionDiv initial={{x:20,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.5}} className="px-3 justify-self-center lg:justify-self-end">
         <div className="containerz  lg:h-[600px] lg:w-[500px] h-[350px] w-[350px] bg-blue-500 relative rounded-full lg:rounded-2xl overflow-hidden grid place-items-center" > 
-<Image src="/ephin.jpg" alt="picture of Ephin" className="h-full w-full absolute  " fill priority quality={100}/>
+<Image src="/ephin.jpg" alt="picture of Ephin" className="h-full w-full absolute  object-cover" fill priority quality={100} objectFit={"cover"}       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
         </div>
     </MotionDiv>
         </div>

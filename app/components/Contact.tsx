@@ -71,7 +71,7 @@ reset();
             {errors?.message?.type === "required" && <Alert severity="error">message is required.</Alert>}
             </MotionDiv>
             <MotionDiv initial={{y:10,opacity:0}} whileInView={{y:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.6}} className="col-span-2 grid">
-<Button variant="contained" type="submit" disabled={disabled} className="  py-4 ">send</Button>
+<Button variant="contained" name="send" type="submit" disabled={disabled} className="  py-4 ">send</Button>
 </MotionDiv>
         </form>
         <Snackbar open={open} autoHideDuration={5000} onClose={()=>setOpen(false)} message="email sent successfully"/>
