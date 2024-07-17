@@ -28,7 +28,7 @@ export default function Hero(){
     </section>
     <MotionDiv initial={{x:20,opacity:0}} whileInView={{x:0,opacity:1}} viewport={{once:false}} transition={{ease:"linear",delay:0.5}} className="px-3 justify-self-center lg:justify-self-end">
         <div className="containerz  lg:h-[600px] lg:w-[500px] h-[350px] w-[350px] bg-blue-500 relative rounded-full lg:rounded-2xl overflow-hidden grid place-items-center" > 
-<Image src="/ephin.jpg" alt="picture of Ephin" className="h-full w-full absolute  object-cover" fill priority quality={100} objectFit={"cover"}       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
+<Image src="/ephin.webp" alt="picture of Ephin" className="h-full w-full absolute  object-cover" fill priority quality={100} objectFit={"cover"}       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
         </div>
     </MotionDiv>
         </div>
