@@ -6,10 +6,6 @@ html{
     scroll-behavior: smooth;
 }
 
-.containerz{
-    clip-path: polygon(24% 0, 100% 0, 100% 50%, 100% 100%, 24% 83%);
-    position:relative
-}
 
 .Swiper .swiper-button-next{
 background-color:black;
@@ -40,10 +36,4 @@ color:#FF2E2E;
 
 html{
     overflow-x:hidden;
-}
-
-@media screen and (max-width:1024px){
-  .containerz{
-    clip-path:none;
-  }
 }
